@@ -1,0 +1,2 @@
+Il faut installer fr_core_sm-3.5.0 car on ne peut pas se l'envoyer par mail.
+Suivre le fichier requirements.txt

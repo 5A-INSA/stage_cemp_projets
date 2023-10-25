@@ -1,0 +1,11 @@
+J’ai réalisé mon stage de fin d’études sous la forme d’un contrat de professionnalisation à la Caisse d’Epargne Midi-Pyrénées.
+Les missions confiées se regroupent sous l’intitulé « Développement de projet de Data Science en lien avec le projet stratégique de l’entreprise. » 
+J’ai donc travaillé sur les projets suivants :
+
+- Prédiction du nombre de crédits immobiliers arrivant en agence. Analyse exploratoire des données et implémentation de méthodes Python pour prédire du nombre de crédits. Utilisation d’algorithmes pour la prédiction de séries temporelles univariées et multivariées (SARIMA et MiniRocket). 
+
+- Détection de la présence d’une signature sur plusieurs types de documents PDF. Implémentation d’une méthode Python réalisant le traitement des images PDF. Puis utilisation d’un OCR pour extraire le texte des images. Enfin, détection de la signature avec la librairie OpenCV. La solution Python implémentée a dû être adaptée sur Alteryx (ETL, logiciel de no-code). 
+
+- Détection des mots interdits dans du texte. Utilisation de méthodes basiques de traitement de texte et de NLP. Implémentation en Python et en Alteryx. 
+
+- Extraction de l’information présente sur des avis d’imposition. Traitement d’images et utilisation d’un OCR pour extraire le texte des images. Implémentation en Alteryx uniquement. 

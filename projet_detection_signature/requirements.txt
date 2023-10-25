@@ -1,0 +1,66 @@
+# ******************************************************************
+# A installer au prealable :
+# ******************************************************************
+# >>> Installation de pdf2image :
+# Pour lire un pdf avec OpenCv il faut d'abord le transformer en jpg ou jpeg avec la fonction convert_from_path de la librairie pdf2image
+# (doc: https://stackoverflow.com/questions/61832964/how-to-convert-pdf-into-image-readable-by-opencv-python).
+# Cependant, pour pouvoir utiliser convert_from_path, il faut installer poppler pour Windows en suivant le lien
+# https://github.com/oschwartz10612/poppler-windows/releases/ (lien indique dans le tuto : https://github.com/Belval/pdf2image).
+# 
+# 
+# Une fois sur le site indique par le lien de telechargement, cliquer sur la version Release-23.01.0-0.zip et placer le telechargement
+# dans le repertoire de votre choix. De-zipper le dossier intitule poppler-23.01.0 et creer une variable poppler_path qui vaut:
+# "chemin du repertoire poppler-23.01.0\\Library\\bin". Par exemple, j'ai place mon dossier poppler-23.01.0 dans le repertoire "utilities"
+# defini par le chemin "C:\Users\A3193307\Groupe BPCE\CEMP - Data & Décisionnel - Data Science\Analyse Documents\1_Programme_Lila\utilities".
+# Ainsi ma variable `poppler_path` vaudra :
+# poppler_path  = "C:\\Users\\A3193307\\Groupe BPCE\\CEMP - Data & Décisionnel - Data Science\\Analyse Documents\\1_Programme_Lila\\utilities
+# \\poppler-23.01.0\\Library\\bin" (penser a doubler les '\' ou a mettre '/' pour python).
+# 
+# >>> Package signature-detect : Il n'y a rien a installer, ceci est simplement une note informative.
+# La solution que nous avons impemente s'inspire du package signature-detect(tuto: https://github.com/EnzoSeason/signature_detection/blob/main/demo.ipynb).
+# Ce package a ete cree pour deteter la presence d'une signature sur un document PDF ou image mais n'a pas fonctionne dans notre cas.
+# Nous nous sommes donc inspires uniquement de 2 modules du package signature-dectect pour implementer notre propre solution.
+# Les modules que nous avons utilise sont le module "cropper.py" et "judger.py".
+# Ainsi, il n'est pas necessaire d'installer l'ensemble du package mais juste de recuperer les modules necessaires.
+# Pour ce faire, nous avons cree un repertoire "signature-detect" dans le reperotire "utilities" et avons copie les
+# fichiers "__init__.py", "cropper.py" et "judger.py".
+# /.\ Notons que nous avons ensuite MODIFIE ces fichiers pour les adapter a notre probleme.
+# 
+# Notons egalement que le package signature-detect requiert la librairie `ImageMagick` que l'on ne peut pas installer
+# sur l'ordinateur de la banque. Cependant, "cropper.py" et "judger.py" n'ont pas besoin de ce package.
+#
+# >>> Installation de Tesseract :
+# Il faut installer Tesseract OCR sur la machine (https://codetoprosper.com/tesseract-ocr-for-windows/).
+# Dans mon cas, Tesseract est installe ici :  C:\Program Files\Tesseract-OCR.
+# Puis on installe ensuite l'extension python de tesseract avec la commande pip install pytesseract et pip install tesseract.
+# J'obtiens a present l'erreur suivante : *tesseract is not installed or it's not in your PATH. See README file for more information*.
+# Il a donc fallu  definir le chemin du tesseract dans le script avant d'appeler image_to_string :
+# pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+# (source: https://stackoverflow.com/questions/50951955/pytesseract-tesseractnotfound-error-tesseract-is-not-installed-or-its-not-i)
+# ******************************************************************
+
+# python==3.7.0
+
+# Calculs
+numpy==1.21.6
+pandas==1.3.5
+
+# Graphes
+matplotlib==3.2.2
+
+# Manipulation PDF
+pdf2image==1.16.3
+fitz==0.0.1.dev2
+pymupdf==1.21.1
+
+# Manipulation Images
+Pillow==9.4.0
+opencv-python==4.7.0.72
+tesseract==0.1.3
+pytesseract==0.3.10
+
+# Excel
+openpyxl==3.1.2
+
+# Execution ligne de commande
+argparse==1.4.0

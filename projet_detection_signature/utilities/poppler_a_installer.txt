@@ -1,0 +1,24 @@
+Poppler à installer dans utilities du projet detection signature. Ne veut pas me l'envoyer par mail...
+Voir le fichier requirement.txt pour l'installation
+
+Voici l'architecture que devrait avoir le répertoire poppler-23.01.0 : 
+
+|--- poppler-23.01.0 
+|------|---  Library
+|------|------|------ bin
+|------|------|------ include
+|------|------|------ lib
+|------|------|------ share
+|------|---  share 
+|------|------|------ poppler
+|------|------|------|------ cidToUnicode
+|------|------|------|------ cMap
+|------|------|------|------ nameToUnicode
+|------|------|------|------ unicodeMap
+|------|------|------|------ CMakeLists.txt
+|------|------|------|------ COPYING
+|------|------|------|------ COPYING.adobe
+|------|------|------|------ COPYINB.gpl2
+|------|------|------|------ poppler-data.pc
+|------|------|------|------ poppler-data.in
+|------|------|------|------ README

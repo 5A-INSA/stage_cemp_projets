@@ -1,0 +1,123 @@
+# Necessary packages
+# os : Windows-10-10.0.19041-SP0
+# pip install -r requirements.txt
+#
+# *******************************************************
+# Installation des librairies nécessaire à la main
+# *******************************************************
+# >>> Installation de Spacy et des modeles Francais
+# 
+# Il nous faut un Lemmatizer en Francais pour ce projet. Ceci est propose par la librairie SpaCy. Pour cela, on commence par installer spacy, 
+# comme recommande par ce tutoriel https://maelfabien.github.io/machinelearning/NLPfr/#ii-les-grands-principes :
+# pip install spacy
+# Ensuite, on veut telecharger le modele francais :
+# python -m spacy download fr_core_news_sm
+# Le probleme est que l'on est bloque par la caisse d'epargne. Il faut donc realiser une installation a la main des modeles francais 
+# (sources : https://github.com/explosion/spacy-models, https://stackoverflow.com/questions/69216523/spacy-download-en-core-web-lg-manually).
+# 
+# Pour telecharger le modele francais, on se rend sur ce lien : https://github.com/explosion/spacy-models/releases/tag/fr_core_news_sm-3.5.0. 
+# Descendre en bas de la page sur la rubrique Assets et telecharger l'archive "fr_core_news_sm-3.5.0.tar.gz     15.5 MB    Jan 18". 
+# Par exemple, on peut mettre cette archive dans un repertoire utilities prealablement cree.
+# Une fois l'archive telechargee, on extrait cette archive. Cela va creer un repertoire dist qui contient lui-meme un 
+# repertoire ._ et un repertoire fr_core_news_sm-3.5.0. Lors de l'extraction, il se peut que l'on ait un probleme de noms de fichiers
+# pour le repertoire ._. Cela n'a pas d'importance car le repertoire ._ ne sera pas utilise. 
+# Cliquer sur remplacer les noms ou renommer, peu importe.
+# 
+# Nous avons la configuration suivante apres extraction de fr_core_news_sm-3.5.0.tar.gz:
+# 
+# |--- dist
+# |    |--- ._
+# |    |--- fr_core_news_sm-3.5.0
+# |    |    |    |--- fr_core_news_sm
+# |    |    |    |    |--- fr_core_news_sm-3.5.0
+# |    |    |    |    |    |--- attribute_ruler
+# |    |    |    |    |    |--- lemmatizer
+# |    |    |    |    |    |--- morphologizer
+# |    |    |    |    |    |--- ner
+# |    |    |    |    |    |--- parser
+# |    |    |    |    |    |--- senter
+# |    |    |    |    |    |--- tok2vec
+# |    |    |    |    |    |--- vocab
+# |    |    |    |    |    |--- accuracy.json
+# |    |    |    |    |    |--- config.cfg
+# |    |    |    |    |    |--- LICENCE
+# |    |    |    |    |    |--- LICENSES_SOURCES
+# |    |    |    |    |    |--- meta.json
+# |    |    |    |    |    |--- README.md
+# |    |    |    |    |    |--- tokenizer
+# |    |    |    |    |---__init__.py
+# |    |    |    |    |---meta.json
+# |    |    |--- fr_core_news_sm.egg-info
+# |    |    |--- meta.json
+# |    |    |--- LICENSE
+# |    |    |--- LICENSES_SOURCES
+# |    |    |--- MANIFEST.in
+# |    |    |--- PKG-INFO
+# |    |    |--- README.md
+# |    |    |--- setup.cfg
+# |    |    |--- setup.py
+# 
+# Nous aurons seulement besoin du repertoire fr_core_news_sm-3.5.0 situe ici : dist/fr_core_news_sm-3.5.0/fr_core_news_sm/fr_core_news_sm-3.5.0, 
+# contenant le lemmatizer,ner,tokenizer,...
+# On copie tout le repertoire fr_core_news_sm-3.5.0 situe ici dist/fr_core_news_sm-3.5.0 et on le place 
+# dans utilities ou dans le repertoire de votre choix.
+# 
+# Dans un notebook Python (sous l'environnement qui convient, ici nomme motsInterdits), ecrire les lignes suivantes pour 
+# charger le modele francais :
+# 
+# import spacy
+# nlp = spacy.load(r'chemin_vers_utilities/fr_core_news_sm-3.5.0/fr_core_news_sm/fr_core_news_sm-3.5.0')
+# 
+#
+# >>> Installation de nltk
+# 
+# Intaller la librairie python nltk avec la commande suivante :
+# pip install nltk
+# Puis dans un notebook python :
+# import ntlk
+# Il faut ensuite charger nltk data, mais on est bloques par la caisse d'epargne lorsque l'on essaie de proceder par la voie 
+# classique en tapant par exemple la commande :
+# nltk.download('stopwords')
+# 
+# Il faut donc faire une installation a la main. Pour cela, on utilise le tutoriel https://www.nltk.org/data.html et 
+# on regarde les instructions de la rubrique Manual installation.
+# Selon les instructions du tutoriel, on se rend dans un des repertoires listes par la variable NLTK_DATA. 
+# Pour avoir la valeur de NLTK_DATA, on execute la commande nltk.data.path dans un notebook python apres avoir importe la librairie nltk. 
+# Si le repertoire n'existe pas deja, on le cree. Par exemple, ici on cree un repertoire nltk_data a cet endroit : 
+# 'C:\\Users\\A3193307\\AppData\\Local\\miniforge3\\envs\\motsInterdits\\nltk_data'.
+# Dans le repertoire nltk_data, on cree les sous-repertoires chunkers, grammars, misc, sentiment, taggers, corpora, help, models, stemmers, tokenizers.
+# Il faudra telecharger individuellement chaque package necessaire depuis le lien https://www.nltk.org/nltk_data/. Puis dezipper le package et le 
+# placer dans le sous-repertoire de nltk_data approprie. Par exemple, si on veut telecharger les stopwords, on se rend sur le lien 
+# https://www.nltk.org/nltk_data/ et on trouve le fichier correspondant, ici intitule Stopwords Corpus [ download | source ]. 
+# On effectue un clic droit sur le mot download et on clique sur Copier le lien pour obtenir le lien de telechargement de stopwords, 
+# ici https://raw.githubusercontent.com/nltk/nltk_data/gh-pages/packages/corpora/stopwords.zip. Ce lien de telechargement nous indique
+# dans quel sous-repertoire placer stopwords, ici dans le sous-repertoire corpora. On peut maintenant telecharger le fichier stopwords
+# et le dezipper dans le repertoire corpora de nltk_data. Une fois le fichier dezippe, on peut supprimer le .zip et ne garder que 
+# le fichier dezippe.
+# 
+# On peut a present utiliser les stopwords par exemple :
+# from nltk.corpus import stopwords
+# stopWords = set(stopwords.words('french'))
+#
+# *******************************************************
+# Installation des librairies via la ligne de commande
+# *******************************************************
+
+python==3.8.0
+
+setuptools==67.7.2
+
+# Calculs 
+pandas==2.0.2
+numpy==1.24.3
+
+# Traitement chaines catacteres
+regex==2023.6.3
+
+# NLP
+nltk==3.8.1
+spacy==3.5.3
+
+# Excel
+xlsxwriter==3.1.2
+openpyxl==3.1.2
