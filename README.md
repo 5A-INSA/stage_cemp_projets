@@ -1,10 +1,11 @@
 # Alternance à la Caisse d’Épargne Midi-Pyrénées : 
 
 **Superviseurs** :
-- Mathieu LePajolec (https://www.linkedin.com/in/mathew-l/)
 - Jerôme Martin
 - Bertrand Michelot
- 
+
+Je tiens à remercier en particulir Mathieu LePajolec (https://www.linkedin.com/in/mathew-l/), data scientist prestataire, qui a travaillé quelques mois au sein de l'équipe pendant mon alternance. Ses conseils et ses encouragements ont été d'une grande aide.
+
 Lors de mon contrat de professionnalisation d'un an à la CEMP (Caisse d’Épargne Midi-Pyrénées), j'ai mené en totale autonomie les trois projets suivants : 
 
 - Projet 1 : Développement d'une méthode innovante de détection de signatures sur PDF. Pour des raisons de sécurité, je n’ai pas pu utiliser de solutions existantes à l’exception de OpenCV et d’un OCR. Ma solution basée sur techniques de vision par ordinateur a atteint une précision proche de 100 % sur les données disponibles.
