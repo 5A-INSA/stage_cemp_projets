@@ -46,63 +46,45 @@ Une fois cela fait, l’environnement de travail est prêt.
 
 ---
 
-#### Description des répertoires et fichiers
+# Arborescence du projet : Détection de Signature
 
-##### `data/`
-- Contient un petit nombre de fichiers PDF labellisés servant de données d’entrée pour les fonctions du projet. Ceci permet de tester les différents cas possibles avec un petit nombre de PDF.
+```plaintext
+Racine du projet :
+├── README.md                # Documentation principale du projet
+├── requirements.txt         # Liste des bibliothèques Python nécessaires
+├── run_detectSignature_tesseract.ipynb  # Notebook principal pour tester les fonctions
 
-##### `brouillons/`
-- Contient les anciens codes ayant permis d’implémenter la solution finale. Ces codes sont conservés au cas où on souhaiterait y revenir, mais ils ne sont plus utiles et ce répertoire peut être supprimé.
+Dossiers :
+├── data/                    
+│   ├── template_bs_type1.pdf         # Modèle pour les documents BS
+│   ├── template_eai_type1.pdf        # Premier modèle pour les documents EAI
+│   ├── template_eai_type2.pdf        # Deuxième modèle pour les documents EAI
+│   ├── template_eai_type3.pdf        # Troisième modèle pour les documents EAI
+│   ├── template_lea.pdf              # Modèle pour les documents LEA
+│   ├── template_qcfqr_type1.pdf      # Premier modèle pour les documents QCFQR
+│   ├── template_qcfqr_type2.pdf      # Deuxième modèle pour les documents QCFQR
+│   ├── EAI_pdfs_round2.txt           # Liste des PDF nécessitant un deuxième modèle
 
-##### `run_detectSignature_tesseract.ipynb`
-- Un notebook permettant de savoir comment utiliser les fonctions implémentées dans le répertoire `utilities`.
+├── brouillons/                # Codes anciens (non utilisés dans la version finale)
+│   ├── ancienne_version1.py
+│   ├── ancienne_version2.py
 
-##### `utilities/`
-- Contient les fonctions Python `.py` développées dans le cadre du projet. Toutes les fonctions sont commentées et documentées. Pour savoir comment utiliser ces fichiers `.py`, exécuter le notebook `run_detectSignature_tesseract.ipynb`.
+├── utilities/                 # Modules Python développés
+│   ├── poppler-23.01.0/       # Librairie nécessaire pour pdf2image
+│   ├── set_global.py          # Définition des variables globales
+│   ├── preprocessing.py       # Chargement, affichage et pré-traitement des images
+│   ├── template.py            # Création d'un modèle PDF pour la détection de signature
+│   ├── signatureDetect.py     # Détection des signatures sur des PDF analysés
+│   ├── run_template.py        # Exécution de la création du modèle depuis le terminal
+│   ├── run_detectSignature.py # Exécution de la détection de signature depuis le terminal
+│   ├── run_retrieveErrorFiles.py  # Récupération des fichiers PDF non détectés
+│   ├── signature_detect/      # Modules pour la détection des signatures
+│       ├── __init__.py
+│       ├── cropper.py
+│       ├── judger.py
 
-###### Fichiers présents dans `utilities/` :
-
-- **`poppler-23.01.0/`** : Librairie installée dans le cadre de la configuration de la librairie Python `pdf2image` (voir `requirements.txt` pour l’installation). Ce répertoire a été ajouté pour contourner le pare-feu de l’entreprise.
-
-- **`set_global.py`** : Définit les variables globales utilisées par les autres fichiers `.py`.
-
-- **`preprocessing.py`** : Contient les fonctions pour charger, afficher et pré-traiter les images afin qu’elles soient mieux lisibles par un OCR (Tesseract). Ces fonctions sont utilisées par les modules `template.py` et `detectSignature.py`.
-
-- **`template.py`** : Module permettant de définir un PDF modèle pour la détection de signature.  
-  - L’utilisateur sélectionne un PDF modèle, saisit une liste de mots-clés `keyWords_template` présents sur la page contenant la signature, et dessine des rectangles autour des zones supposées contenir la signature.  
-  - Les positions relatives des rectangles par rapport aux mots-clés sont calculées et stockées.  
-  **Fichiers générés en sortie** :
-  - `template_shape.txt`: Dimensions du PDF modèle.
-  - `template_text.txt`: Texte de la page contenant la signature.
-  - `saved_template.pickle`: Positions relatives des rectangles par rapport aux mots-clés.
-
-- **`signatureDetect.py`** : Module permettant de vérifier la présence d’une signature sur un PDF à partir d’un modèle défini avec `template.py`.  
-  - Ce module redimensionne le PDF à analyser aux dimensions du modèle, identifie la page contenant la signature, et place les rectangles en fonction des positions calculées.  
-  - Il calcule le pourcentage de pixels continus dans les rectangles pour déterminer s’ils contiennent une signature.  
-  **Fichier généré en sortie** :  
-  - Un fichier `.csv` contenant les colonnes `file_name` (nom des PDF) et `result` (résultat de la classification : "signature", "no signature", ou "Page contenant la signature non détectée").
-
-- **`signature_detect/`** : Répertoire contenant les fichiers `__init__.py`, `cropper.py` et `judger.py`. Ces fichiers détectent les signatures dans les rectangles en calculant le pourcentage de pixels continus.
-
-- **`run_template.py`** : Permet d’exécuter le module `template.py` depuis le terminal.
-
-- **`run_detectSignature.py`** : Permet d’exécuter le module `signatureDetect.py` depuis le terminal.
-
-- **`run_retrieveErrorFiles.py`** : Permet de récupérer les PDF pour lesquels le résultat est "Page contenant la signature non détectée" afin de les soumettre à un autre modèle.
-
----
-
-#### Autres fichiers
-
-- **`EAI_pdfs_round2.txt`** : Fichier généré par `run_retrieveErrorFiles.py`, contenant les noms des PDF nécessitant un deuxième modèle.
-
-- **Mots-clés** :  
-  - `keyWords_template_bs.txt`, `keyWords_template_eai.txt`, `keyWords_template_lea.txt`, `keyWords_template_qcfqr.txt`: Contiennent les mots-clés pour chaque type de document PDF (BS, EAI, LEA, QCFQR).
-
-- **Modèles PDF** :  
-  - `template_bs_type1.pdf`: Modèle pour les documents BS.  
-  - `template_eai_type1.pdf`, `template_eai_type2.pdf`, `template_eai_type3.pdf`: Modèles pour les documents EAI.  
-  - `template_lea.pdf`: Modèle pour les documents LEA.  
-  - `template_qcfqr_type1.pdf`, `template_qcfqr_type2.pdf`: Modèles pour les documents QCFQR.
-
----
+Fichiers générés par le projet :
+├── template_shape.txt         # Dimensions du modèle PDF
+├── template_text.txt          # Texte de la page contenant la signature
+├── saved_template.pickle      # Positions des rectangles relatifs aux mots-clés
+├── result.csv                 # Résultats finaux avec noms des fichiers et classification
