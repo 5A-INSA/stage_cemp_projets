@@ -45,7 +45,7 @@ Ensuite, créer un nouvel environnement conda spécifique à ce projet (par exem
 
 Une fois cela fait, l’environnement de travail est prêt.
 
-#### Arborescence du projet :
+#### Description des répertoires et fichiers :
 
 - **Racine du projet** : Contient la documentation et les fichiers de configuration essentiels.
 - **`data/`** : Fichiers PDF servant de modèles et exemples pour la détection de signature.
@@ -54,7 +54,7 @@ Une fois cela fait, l’environnement de travail est prêt.
 
 ```plaintext
 Racine du projet :
-├── DetectionSignaturePython_aLirePourReprendreLeProjet.docx  # Documentation principale du projet. S'y référer plus davantage d'information sur l'utilisation des fichiers
+├── DetectionSignaturePython_aLirePourReprendreLeProjet.docx  # Documentation principale du projet. S'y référer pour davantage d'information sur l'utilisation des fichiers
 ├── requirements.txt         # Liste des bibliothèques Python nécessaires
 ├── run_detectSignature_tesseract.ipynb  # Notebook principal pour tester les fonctions
 ├── result.csv                    # Résultats finaux avec noms des fichiers et classification
@@ -94,3 +94,53 @@ Dossiers :
 │       ├── cropper.py
 │       ├── judger.py
 ```
+
+
+---
+
+### Projet 2 : Back-Office Crédits
+
+#### Objectif du projet
+
+Le but de ce projet est de prédire le nombre de crédits immobiliers qui arrivent au back-office par jour ou par semaine.  
+Pour davantage d’informations, se référer au rapport de stage *2022-23-stage5A-Roig-Lila_PFE.pdf*, aux présentations PowerPoint ou aux commentaires et descriptions des fonctions implémentées. Il est conseillé de lire le rapport de stage avant de reprendre le projet pour avoir une idée de la démarche globale.
+
+
+#### Mise en route du projet
+
+Pour faire fonctionner le projet, il faut au préalable installer Python sur sa machine (voir le *OneNote Data & Décisionnel Notebook* et la partie « A lire pour le prochain alternant »).  
+Ensuite, créer un nouvel environnement conda spécifique à ce projet (par exemple intitulé `backOffice`). Dans cet environnement, installer :
+- **Jupyter Notebook** (voir le OneNote)
+- Les bibliothèques listées dans le fichier `requirements.txt` avec les versions spécifiées.
+
+Une fois cela fait, l’environnement de travail est prêt.
+
+
+#### Description des répertoires et fichiers :
+
+```plaintext
+Racine du projet :
+├── backOffice_aLirePourReprendreLeProjet.docx  # Documentation principale du projet. S'y référer pour davantage d'information sur l'utilisation des fichiers
+├── requirements.txt         # Liste des bibliothèques Python nécessaires
+├── set_path.py              # Définit les chemins absolus pour tous les fichiers .py
+├── run_data_viz.ipynb       # Pré-traitement et analyse exploratoire des données
+├── run_sarima_task1.ipynb   # Application de la méthode SARIMA
+├── run_miniRocket_task1.ipynb  # Application du réseau MiniRocket
+├── run_hawkes_task1.ipynb   # Application de la méthode Hawkes (non fonctionnelle)
+
+Dossiers :
+├── data/  # Données nécessaires au projet
+├── restitution/             # Présentation PowerPoint du projet                
+├── plots/                   # Contient les graphiques générés par le programme
+│  
+├── utilities/               # Ensemble des fonctions Python développées
+│   ├── data_prep_general.py  # Préparation des données générales
+│   ├── data_viz.py           # Visualisation des données
+│   ├── data_prep_task1.py    # Préparation des données spécifiques à la tâche 1
+│   ├── denoising.py          # Module pour le débruitage des séries temporelles
+│   ├── sarima.py             # Module pour la méthode SARIMA
+│   ├── miniRocket.py         # Module pour l’application du réseau MiniRocket
+│  
+├── brouillon/               # Notebooks de développement non utilisés dans la version finale
+
+
