@@ -26,7 +26,7 @@ Une des principales difficultés de ces projets a été la politique de sécurit
 - `projet_detection_signature`: projet 1
 - `projet_mots_interdits`: projet 3
 - `rapport_et_oral_stage`: compte rendu de mon stage
-- `Installation_poste_travail_banque.docx`: processus d'installation particulier de python sur le poste de travail en raison des pare-feux de l'entreprise.
+- `Installation_poste_travail_banque.docx`: processus d'installation particulier de python sur le poste de travail de la CEMP en raison des pare-feux de l'entreprise.
 
 ---
 
