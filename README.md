@@ -143,7 +143,7 @@ Dossiers :
 │   ├── miniRocket.py         # Module pour l’application du réseau MiniRocket
 │  
 ├── brouillon/               # Notebooks de développement non utilisés dans la version finale
-
+```
 
 ---
 
