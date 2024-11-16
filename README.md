@@ -28,7 +28,7 @@ Une des principales difficultés de ces projets a été la politique de sécurit
 
 ---
 
-### Projet 1 : projet_detection_signature
+### Projet 1 : Detection de signature 
 
 #### Objectif du projet
 
@@ -142,5 +142,51 @@ Dossiers :
 │   ├── miniRocket.py         # Module pour l’application du réseau MiniRocket
 │  
 ├── brouillon/               # Notebooks de développement non utilisés dans la version finale
+
+
+
+### Projet 3 : Mots interdits  
+
+##### Objectif du projet
+
+Le but de ce projet est de détecter la présence de mots interdits dans le texte de la table Osirisk.  
+Pour davantage d’informations, se référer au rapport de stage *2022-23-stage5A-Roig-Lila_PFE.pdf*, aux présentations PowerPoint ou aux commentaires et descriptions des fonctions implémentées. Il est conseillé de lire le rapport de stage avant de reprendre le projet pour avoir une idée de la démarche globale.
+
+#### Mise en route du projet
+
+Pour faire fonctionner le projet, il faut au préalable installer Python sur sa machine (voir le *OneNote Data & Décisionnel Notebook* et la partie « A lire pour le prochain alternant »).  
+Ensuite, créer un nouvel environnement conda spécifique à ce projet (par exemple intitulé `motsInterdits`). Dans cet environnement, installer :
+- **Jupyter Notebook** (voir le OneNote)
+- Les bibliothèques listées dans le fichier `requirements.txt` avec les versions spécifiées.
+
+Une fois cela fait, l’environnement de travail est prêt.
+
+#### Arborescence du projet
+
+```plaintext
+Racine du projet :
+├── DetectionMotsInterditsPython_aLirePourReprendreLeProjet.docx  # Documentation principale du projet. S'y référer pour davantage d'information sur l'utilisation des fichiers
+├── requirements.txt         # Liste des bibliothèques Python nécessaires
+├── motsInterdits.ipynb      # Notebook contenant le code pour détecter les mots interdits
+
+Dossiers :
+├── data/                    
+│   ├── Osirisk_export_20230524 - mots interdits RGPD.xlsx
+│       # Table Osirisk contenant les colonnes à analyser : 
+│       # « Libellé Incident », « Description », « Réclamation », « Local », « Client », « Lieu »
+│   ├── 2023 01 20 Dictionnaire contrôle a posteriori.xlsx
+│       # Liste de mots interdits pour le contrôle a posteriori
+│   ├── 2023 01 20 Dictionnaire contrôle a priori.xlsx
+│       # Liste de mots interdits pour le contrôle a priori
+│   ├── prenoms_France_1900-2021.csv
+│       # Liste des prénoms français (utile pour différencier un mot interdit d’un prénom)
+│
+├── utilities/               # Modules Python nécessaires
+│   ├── fr_core_news_sm-3.5.0/
+│       # Modèle de lemmatiseur français installé manuellement
+│
+├── temp_result/             # Fichiers temporaires au format pickle
+│   ├── [Fichiers générés lors de l’exécution des fonctions longues dans motsInterdits.ipynb]
+
 
 
