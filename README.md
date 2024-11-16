@@ -2,12 +2,14 @@
 
 ## Introduction
 
-**Superviseurs** :
-- Jerôme Martin
-- Bertrand Michelot
+### Superviseurs
+
+Jerôme Martin et Bertrand Michelot
 
 Je tiens à remercier en particulier Mathieu LePajolec (https://www.linkedin.com/in/mathew-l/), data scientist prestataire, qui a travaillé quelques mois au sein de l'équipe pendant mon alternance. Ses conseils et ses encouragements ont été d'une grande aide.
 
+
+### Projets  
 Lors de mon contrat de professionnalisation d'un an à la CEMP (Caisse d’Épargne Midi-Pyrénées), j'ai mené en totale autonomie les trois projets suivants : 
 
 - **Projet 1** : Développement d'une méthode innovante de détection de signatures sur PDF. Pour des raisons de sécurité, je n’ai pas pu utiliser de solutions existantes à l’exception de OpenCV et d’un OCR. Ma solution basée sur techniques de vision par ordinateur a atteint une précision proche de 100 % sur les données disponibles.
@@ -28,15 +30,15 @@ Une des principales difficultés de ces projets a été la politique de sécurit
 
 ---
 
-### Projet 1 : Detection de signature 
+## Projet 1 : Detection de signature 
 
-#### Objectif du projet
+### Objectif du projet
 
 Le but de ce projet est de détecter la présence d’une signature sur plusieurs types de documents PDF.  
 Pour davantage d’informations, se référer au rapport de stage *2022-23-stage5A-Roig-Lila_PFE.pdf*, aux présentations PowerPoint ou aux commentaires et descriptions des fonctions implémentées. Il est conseillé de lire le rapport de stage avant de reprendre le projet pour avoir une idée de la démarche globale.
 
 
-#### Mise en route du projet
+### Mise en route du projet
 
 Pour faire fonctionner le projet, il faut au préalable installer Python sur sa machine (voir le *OneNote Data & Décisionnel Notebook* et la partie « A lire pour le prochain alternant »).  
 Ensuite, créer un nouvel environnement conda spécifique à ce projet (par exemple intitulé `pdf`). Dans cet environnement, installer :
@@ -45,7 +47,7 @@ Ensuite, créer un nouvel environnement conda spécifique à ce projet (par exem
 
 Une fois cela fait, l’environnement de travail est prêt.
 
-#### Description des répertoires et fichiers :
+### Description des répertoires et fichiers :
 
 - **Racine du projet** : Contient la documentation et les fichiers de configuration essentiels.
 - **`data/`** : Fichiers PDF servant de modèles et exemples pour la détection de signature.
@@ -98,15 +100,15 @@ Dossiers :
 
 ---
 
-### Projet 2 : Back-Office Crédits
+## Projet 2 : Back-Office Crédits
 
-#### Objectif du projet
+### Objectif du projet
 
 Le but de ce projet est de prédire le nombre de crédits immobiliers qui arrivent au back-office par jour ou par semaine.  
 Pour davantage d’informations, se référer au rapport de stage *2022-23-stage5A-Roig-Lila_PFE.pdf*, aux présentations PowerPoint ou aux commentaires et descriptions des fonctions implémentées. Il est conseillé de lire le rapport de stage avant de reprendre le projet pour avoir une idée de la démarche globale.
 
 
-#### Mise en route du projet
+### Mise en route du projet
 
 Pour faire fonctionner le projet, il faut au préalable installer Python sur sa machine (voir le *OneNote Data & Décisionnel Notebook* et la partie « A lire pour le prochain alternant »).  
 Ensuite, créer un nouvel environnement conda spécifique à ce projet (par exemple intitulé `backOffice`). Dans cet environnement, installer :
@@ -115,8 +117,7 @@ Ensuite, créer un nouvel environnement conda spécifique à ce projet (par exem
 
 Une fois cela fait, l’environnement de travail est prêt.
 
-
-#### Description des répertoires et fichiers :
+### Description des répertoires et fichiers :
 
 ```plaintext
 Racine du projet :
@@ -144,15 +145,16 @@ Dossiers :
 ├── brouillon/               # Notebooks de développement non utilisés dans la version finale
 
 
+---
 
-### Projet 3 : Mots interdits  
+## Projet 3 : Mots interdits  
 
-##### Objectif du projet
+#### Objectif du projet
 
 Le but de ce projet est de détecter la présence de mots interdits dans le texte de la table Osirisk.  
 Pour davantage d’informations, se référer au rapport de stage *2022-23-stage5A-Roig-Lila_PFE.pdf*, aux présentations PowerPoint ou aux commentaires et descriptions des fonctions implémentées. Il est conseillé de lire le rapport de stage avant de reprendre le projet pour avoir une idée de la démarche globale.
 
-#### Mise en route du projet
+### Mise en route du projet
 
 Pour faire fonctionner le projet, il faut au préalable installer Python sur sa machine (voir le *OneNote Data & Décisionnel Notebook* et la partie « A lire pour le prochain alternant »).  
 Ensuite, créer un nouvel environnement conda spécifique à ce projet (par exemple intitulé `motsInterdits`). Dans cet environnement, installer :
@@ -161,7 +163,7 @@ Ensuite, créer un nouvel environnement conda spécifique à ce projet (par exem
 
 Une fois cela fait, l’environnement de travail est prêt.
 
-#### Arborescence du projet
+### Arborescence du projet
 
 ```plaintext
 Racine du projet :
