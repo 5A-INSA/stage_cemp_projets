@@ -6,7 +6,7 @@
 - Jerôme Martin
 - Bertrand Michelot
 
-Je tiens à remercier en particulir Mathieu LePajolec (https://www.linkedin.com/in/mathew-l/), data scientist prestataire, qui a travaillé quelques mois au sein de l'équipe pendant mon alternance. Ses conseils et ses encouragements ont été d'une grande aide.
+Je tiens à remercier en particulier Mathieu LePajolec (https://www.linkedin.com/in/mathew-l/), data scientist prestataire, qui a travaillé quelques mois au sein de l'équipe pendant mon alternance. Ses conseils et ses encouragements ont été d'une grande aide.
 
 Lors de mon contrat de professionnalisation d'un an à la CEMP (Caisse d’Épargne Midi-Pyrénées), j'ai mené en totale autonomie les trois projets suivants : 
 
@@ -68,7 +68,8 @@ Racine du projet :
 ├── template_qcfqr_type2.pdf      # Deuxième modèle pour les documents QCFQR
 
 Dossiers :
-├── restitution / #présentations orale du projet 
+├── restitution / #présentations orales du projet
+│
 ├── data/
 │   ├── BS/    #quelques documents pdf BS à analyser
 │   ├── EAI/   #quelques documents pdf EAI à analyser
